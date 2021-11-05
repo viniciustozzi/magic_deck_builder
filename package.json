@@ -1,0 +1,34 @@
+{
+  "name": "mtg-app",
+  "scripts": {
+    "ancient": "clojure -Sdeps '{:deps {com.github.liquidz/antq {:mvn/version \"RELEASE\"}}}' -m antq.core",
+    "watch": "npx shadow-cljs watch app browser-test karma-test",
+    "release": "npx shadow-cljs release app",
+    "build-report": "npx shadow-cljs run shadow.cljs.build-report app target/build-report.html",
+    "ci": "npx shadow-cljs compile karma-test && npx karma start --single-run --reporters junit,dots"
+  },
+  "dependencies": {
+    "bulma": "^0.9.3",
+    "charts.css": "^0.9.0",
+    "create-react-class": "^15.7.0",
+    "highlight.js": "11.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "shadow-cljs": "2.15.2",
+    "karma": "6.3.4",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-cljs-test": "0.1.0",
+    "karma-junit-reporter": "2.0.1"
+  },
+  "description": "A [re-frame](https://github.com/day8/re-frame) application designed to ... well, that part is up to you.",
+  "version": "1.0.0",
+  "main": "karma.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
